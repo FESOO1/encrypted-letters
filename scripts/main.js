@@ -83,7 +83,7 @@ function createSecretLetter(e) {
             };
         });
         unlockTheLetterButton[i].addEventListener('mouseover', () => {
-            secretLetterItself.href = null;
+            secretLetterItself.removeAttribute('href');
         });
         // UNLOCK THE LETTER
         let isUnlocked = false;
