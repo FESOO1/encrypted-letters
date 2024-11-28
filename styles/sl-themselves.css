@@ -74,6 +74,12 @@
     width: 20px;
 }
 
+.secret-letter-itself-button-svg-second {
+    width: 20px;
+    color: white;
+    display: none;
+}
+
 .secret-letter-itself-button:hover {
     background-color: rgb(40,40,41);
 }
