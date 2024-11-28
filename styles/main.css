@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
-    --f-all: "Afacad Flux", sans-serif;
+    --f-poppins: "Poppins", sans-serif;
+    --f-afacad: "Afacad Flux", sans-serif;
 }
 
 * {
@@ -40,7 +42,7 @@ body {
     cursor: pointer;
     border-top: 1px solid rgba(255,255,255,0.03);
     border-bottom: 1px solid rgba(255,255,255,0.03);
-    box-shadow: 0 0 20px black;
+    z-index: 998;
 }
 
 .sl-add-letter-button-svg {
@@ -53,4 +55,69 @@ body {
 
 .sl-add-letter-button:active {
     background-color: rgb(21,21,22);
+}
+
+/* LETTER FORM */
+
+.sl-form {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 11, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LETTER FORM ITSELF */
+
+.sl-form-itself {
+    width: 600px;
+    padding: 15px;
+    background-color: rgb(20,20,21);
+    border-top: 1px solid rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+    border-radius: 1rem;
+}
+
+.sl-form-itself label {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: var(--f-poppins);
+    line-height: 1cap;
+}
+
+.sl-form-itself-letter-title-input {
+    width: 100%;
+    height: 40px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    border-radius: 0.5rem;
+    border: 0;
+    outline: none;
+    background-color: rgb(15,15,16);
+    padding-inline: 10px;
+    color: white;
+    font-family: var(--f-poppins);
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+.sl-form-itself-letter-input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 350px;
+    min-height: 200px;
+    border-radius: 0.5rem;
+    border: 0;
+    background-color: rgb(15,15,16);
+    outline: none;
+    color: white;
+    padding: 10px;
+    font-family: var(--f-poppins);
+    margin-top: 4px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.04);
 }
