@@ -1,5 +1,5 @@
 const displayLetterTitle = document.querySelector('.display-letter-title');
-const displayLetterItself = document.querySelector('.display-letter-itself');
+const displayLetterItself = document.querySelector('.display-letter-paragraph');
 
 // GETTING DATA FROM LOCAL STORAGE
 
