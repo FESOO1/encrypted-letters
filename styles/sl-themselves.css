@@ -3,7 +3,8 @@
 .secret-letters-themselves {
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 /* SECRET LETTER ITSELF */
@@ -14,6 +15,7 @@
     row-gap: 10px;
     text-decoration: none;
     width: 100%;
+    height: max-content;
     background-color: rgb(20,20,21);
     border: 1px solid rgba(255,255,255,0.02);
     border-radius: 0.4rem;
