@@ -117,7 +117,7 @@ body {
     width: 100%;
     max-width: 100%;
     min-width: 100%;
-    max-height: 350px;
+    max-height: 300px;
     min-height: 200px;
     border-radius: 0.5rem;
     border: 0;
@@ -130,6 +130,10 @@ body {
     margin-bottom: 20px;
     border: 1px solid rgba(255,255,255,0.04);
 }
+
+/* .sl-form-itself-letter-input::-webkit-scrollbar {
+    display: none;
+} */
 
 .sl-form-itself-letter-password-input {
     width: 100%;
