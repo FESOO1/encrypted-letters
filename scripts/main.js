@@ -56,7 +56,6 @@ function createSecretLetter(e) {
             </button>
         </div>
     `;
-
     secretLettersThemselves.appendChild(secretLetterItself);
 
     // SAVING THE INPUTS IN ARRAYS
@@ -78,6 +77,7 @@ function createSecretLetter(e) {
     const unlockTheLetterButton = document.querySelectorAll('.secret-letter-itself-lock-unlock-button');
 
     for (let i = 0; i < unlockTheLetterButton.length; i++) {
+        let isUnlocked = false;
         // HOVER OVER THE SECRET LETTER ITSELF
         unlockTheLetterButton[i].addEventListener('mouseleave', () => {
             if (isUnlocked === true) {
@@ -88,7 +88,6 @@ function createSecretLetter(e) {
             secretLetterItself.removeAttribute('href');
         });
         // UNLOCK THE LETTER
-        let isUnlocked = false;
         unlockTheLetterButton[i].addEventListener('click', e => {
             e.stopImmediatePropagation();
 
