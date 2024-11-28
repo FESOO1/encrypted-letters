@@ -10,6 +10,7 @@ const letterSaveButton = document.getElementById('letterSaveButton');
 
 // PASSWORD FORM VARIABLES
 const spPasswordForm = document.querySelector('.sl-password-form');
+const spPasswordFormInner = document.querySelector('.sl-password-form-inner');
 const enterPasswordInput = document.getElementById('enterPasswordInput');
 const enterPasswordButton = document.getElementById('enterPasswordButton');
 
@@ -79,7 +80,15 @@ function createSecretLetter(e) {
             spPasswordForm.classList.add('sl-password-form-active');
             isUnlocked = true;
         });
+
+
+        
     };
+
+    // UNLOCK THE LETTER
+    spPasswordFormInner.addEventListener('click', e => {
+        e.stopImmediatePropagation();
+    });
 };
 
 // 
