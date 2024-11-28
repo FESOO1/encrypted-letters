@@ -118,7 +118,7 @@ function createSecretLetter(e) {
                 unlockTheLetterButton[i].classList.add('secret-letter-itself-lock-unlock-button-js');
 
                 // DISABLING THE DELETE BUTTON
-                deleteTheLetterButton[i].disabled = false;
+                /* deleteTheLetterButton[i].disabled = false; */
                 // GIVING ACCESS TO LETTER
                 secretLetterItself.href = '../pages/display-letter.html';
             } else {
