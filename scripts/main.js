@@ -78,10 +78,14 @@ function createSecretLetter(e) {
     for (let i = 0; i < unlockTheLetterButton.length; i++) {
         // UNLOCK THE LETTER
         let isUnlocked = false;
-        unlockTheLetterButton[i].addEventListener('click', () => {
+        unlockTheLetterButton[i].addEventListener('click', e => {
+            e.stopImmediatePropagation();
+
             if (isUnlocked === false) {
                 spPasswordForm.classList.add('sl-password-form-active');
             } else {
+                // DISABLING THE DELETE BUTTON
+                deleteTheLetterButton[i].disabled = true;
                 isUnlocked = false;
                 unlockTheLetterButton[i].classList.remove('secret-letter-itself-lock-unlock-button-js');
             };
