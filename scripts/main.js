@@ -126,6 +126,13 @@ function createSecretLetter(e) {
             // RESETTING THE INPUT
             enterPasswordInput.value = '';
         });
+
+        // SECRET LETTER ITSELF
+        secretLetterItself.addEventListener('click', () => {
+            // SAVING THE DATA INTO LOCAL STORAGE
+            localStorage.setItem('letterItselfData', secretLetterItselfData[i]);
+            localStorage.setItem('letterTitleData', secretLetterTitleData[i]);
+        });
     };
     // UNLOCK THE LETTER FORM ITSELF
     spPasswordFormInner.addEventListener('click', e => {
