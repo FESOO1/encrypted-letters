@@ -45,8 +45,14 @@ body {
     z-index: 998;
 }
 
+.add-letter-button-js > .sl-add-letter-button-svg {
+    transform: rotateZ(45deg);
+    color: red;
+}
+
 .sl-add-letter-button-svg {
     color: white;
+    transition: transform 300ms, color 300ms;
 }
 
 .sl-add-letter-button:hover {
@@ -149,12 +155,12 @@ body {
     border-radius: 0.5rem;
     border: 0;
     color: white;
-    background-color: rgb(25,25,26);
+    background-color: rgb(27,27,28);
     cursor: pointer;
     border-top: 1px solid rgba(255,255,255,0.05);
     border-bottom: 1px solid rgba(255,255,255,0.02);
 }
 
 .sl-form-itself-letter-save-button:hover {
-    background-color: rgb(28,28,29);
+    background-color: rgb(33,33,34);
 }

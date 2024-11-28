@@ -5,6 +5,7 @@ const slForm = document.getElementById('slForm');
 
 function addLetterFormDisplay() {
     slForm.classList.toggle('sl-form-js');
+    addLetterButton.classList.toggle('add-letter-button-js');
 };
 
 // INITIALIZING BUTTONS
