@@ -64,9 +64,13 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(10, 10, 11, 0.5);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
+}
+
+.sl-form-js {
+    display: flex;
 }
 
 /* LETTER FORM ITSELF */
