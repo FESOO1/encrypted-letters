@@ -23,8 +23,10 @@ body::before {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../assets/ooorganize\(27\).svg) no-repeat;
+    background: url(../assets/bg.svg) no-repeat;
     background-size: cover;
+    background-position: center;
+    z-index: -1;
 }
 
 /* CONTAINER */

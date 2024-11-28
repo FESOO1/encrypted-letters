@@ -1,0 +1,79 @@
+/* SECRET LETTERS THEMSELVES */
+
+.secret-letters-themselves {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+/* SECRET LETTER ITSELF */
+
+.secret-letter-itself {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    text-decoration: none;
+    width: 100%;
+    background-color: rgb(20,20,21);
+    border: 1px solid rgba(255,255,255,0.02);
+    border-radius: 0.4rem;
+    padding: 10px;
+    transition: background-color 300ms, border 300ms;
+}
+
+.secret-letter-itself-inner {
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 0.2rem;
+    background-color: rgb(16,16,17);
+    padding: 5px;
+    transition: background-color 300ms, border 300ms;
+}
+
+.secret-letter-itself-inner-title {
+    color: white;
+    font-family: var(--f-poppins);
+    font-weight: 400;
+}
+
+/* SECRET LETTER ITSELF STATES */
+
+.secret-letter-itself:hover .secret-letter-itself-inner {
+    border: 1px solid rgba(255,255,255,0.1);
+    background-color: rgb(18,18,19);
+}
+
+.secret-letter-itself:hover {
+    border: 1px solid rgba(255,255,255,0.05);
+    background-color: rgb(22,22,23);
+}
+
+/* SECRET LETTER ITSELF BUTTONS */
+
+.secret-letter-itself-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+}
+
+/* SECRET LETTER ITSELF BUTTON */
+
+.secret-letter-itself-button {
+    border-radius: 0.2rem;
+    border: 0;
+    padding-block: 5px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+    background-color: rgb(36,36,37);
+    cursor: pointer;
+}
+
+.secret-letter-itself-button-svg {
+    color: white;
+    width: 20px;
+}
+
+.secret-letter-itself-button:hover {
+    background-color: rgb(40,40,41);
+}
