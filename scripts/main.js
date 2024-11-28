@@ -103,6 +103,9 @@ function createSecretLetter(e) {
                 isUnlocked = false;
                 unlockTheLetterButton[i].classList.remove('secret-letter-itself-lock-unlock-button-js');
             };
+
+            // UPDATING
+            secretLetterPasswordData[i];
         });
         // SP PASSWORD FORM
         spPasswordForm.addEventListener('click', () => {
@@ -117,6 +120,7 @@ function createSecretLetter(e) {
                 spPasswordForm.classList.remove('sl-password-form-active');
                 unlockTheLetterButton[i].classList.add('secret-letter-itself-lock-unlock-button-js');
 
+                
                 // DISABLING THE DELETE BUTTON
                 /* deleteTheLetterButton[i].disabled = false; */
                 // GIVING ACCESS TO LETTER
@@ -127,7 +131,6 @@ function createSecretLetter(e) {
                     spPasswordFormInner.classList.remove('sl-password-form-inner-js');
                 }, 301);
             };
-
             // RESETTING THE INPUT
             enterPasswordInput.value = '';
         });
