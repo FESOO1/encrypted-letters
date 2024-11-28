@@ -96,3 +96,11 @@
 .secret-letter-itself-button:disabled .secret-letter-itself-button-svg {
     color: gray;
 }
+
+.secret-letter-itself-lock-unlock-button-js > .secret-letter-itself-button-svg {
+    display: none;
+}
+
+.secret-letter-itself-lock-unlock-button-js > .secret-letter-itself-button-svg-second {
+    display: unset;
+}
