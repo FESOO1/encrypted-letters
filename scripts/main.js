@@ -106,6 +106,7 @@ function createSecretLetter(e) {
 
             // UPDATING
             secretLetterPasswordData[i];
+            console.log(secretLetterPasswordData[i]);
         });
         // SP PASSWORD FORM
         spPasswordForm.addEventListener('click', () => {
@@ -125,6 +126,8 @@ function createSecretLetter(e) {
                 /* deleteTheLetterButton[i].disabled = false; */
                 // GIVING ACCESS TO LETTER
                 secretLetterItself.href = '../pages/display-letter.html';
+                // 
+                console.log(secretLetterPasswordData[i]);
             } else {
                 spPasswordFormInner.classList.add('sl-password-form-inner-js');
                 setTimeout(() => {
