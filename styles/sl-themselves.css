@@ -67,8 +67,9 @@
     justify-content: center;
     border-top: 1px solid rgba(255,255,255,0.05);
     border-bottom: 1px solid rgba(255,255,255,0.02);
-    background-color: rgb(36,36,37);
+    background-color: rgb(40,40,41);
     cursor: pointer;
+    transition: background-color 200ms;
 }
 
 .secret-letter-itself-button-svg {
@@ -83,5 +84,15 @@
 }
 
 .secret-letter-itself-button:hover {
-    background-color: rgb(40,40,41);
+    background-color: rgb(50,50,51);
+}
+
+.secret-letter-itself-button:disabled {
+    background-color: rgb(25,25,26);
+    border: 1px solid rgba(255,255,255,0.03);
+    cursor: not-allowed;
+}
+
+.secret-letter-itself-button:disabled .secret-letter-itself-button-svg {
+    color: gray;
 }
