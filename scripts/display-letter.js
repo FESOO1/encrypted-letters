@@ -9,7 +9,7 @@ function gettingDataFromLocalStorage() {
     
     if (letterTitleData) {
         displayLetterTitle.textContent = letterTitleData;
-        displayLetterItself.textContent = letterItselfData;
+        displayLetterItself.innerHTML = letterItselfData;
     };
 };
 
