@@ -25,6 +25,11 @@ const secretLetterPasswordData = [];
 function createSecretLetter(e) {
     e.preventDefault();
 
+    /* const errorMessages = [];
+
+    if (errorMessages === 0) {
+        
+    } */
     const secretLetterItself = document.createElement('a');
     secretLetterItself.classList.add('secret-letter-itself');
     secretLetterItself.innerHTML = `

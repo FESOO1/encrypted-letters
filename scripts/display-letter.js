@@ -4,12 +4,12 @@ const displayLetterItself = document.querySelector('.display-letter-itself');
 // GETTING DATA FROM LOCAL STORAGE
 
 function gettingDataFromLocalStorage() {
-    const letterItselfData = localStorage.getItem('letterItselfData');
     const letterTitleData = localStorage.getItem('letterTitleData');
-
-    if (letterItselfData) {
-        displayLetterItself.textContent = letterItselfData;
+    const letterItselfData = localStorage.getItem('letterItselfData');
+    
+    if (letterTitleData) {
         displayLetterTitle.textContent = letterTitleData;
+        displayLetterItself.textContent = letterItselfData;
     };
 };
 
