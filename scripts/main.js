@@ -52,6 +52,11 @@ function createSecretLetter(e) {
 
     secretLettersThemselves.appendChild(secretLetterItself);
 
+    // SAVING THE INPUTS IN ARRAYS
+    secretLetterTitleData.push(titleLetterInput.value);
+    secretLetterItselfData.push(letterInput.value);
+    secretLetterPasswordData.push(letterPasswordInput.value);
+
     // RESETTING EVERYTHING
     titleLetterInput.value = '';
     letterInput.value = '';
