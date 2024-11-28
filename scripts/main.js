@@ -72,6 +72,7 @@ function createSecretLetter(e) {
 
 
     // LOCK AND UNLOCK BUTTON
+    const deleteTheLetterButton = document.querySelectorAll('.secret-letter-itself-button');
     const unlockTheLetterButton = document.querySelectorAll('.secret-letter-itself-lock-unlock-button');
 
     for (let i = 0; i < unlockTheLetterButton.length; i++) {
@@ -89,7 +90,7 @@ function createSecretLetter(e) {
         spPasswordForm.addEventListener('click', () => {
             spPasswordForm.classList.remove('sl-password-form-active');
         });
-        // UNLOCK THE LETTER BUTTON
+        // SUBMITTING THE ENTERED PASSWORD
         enterPasswordButton.addEventListener('click', e => {
             e.preventDefault();
 
@@ -97,15 +98,23 @@ function createSecretLetter(e) {
                 isUnlocked = true;
                 spPasswordForm.classList.remove('sl-password-form-active');
                 unlockTheLetterButton[i].classList.add('secret-letter-itself-lock-unlock-button-js');
+
+                // DISABLING THE DELETE BUTTON
+                deleteTheLetterButton[i].disabled = false;
+                // GIVING ACCESS TO LETTER
+                secretLetterItself.href = '../pages/display-letter.html';
             } else {
-                alert('Wrong password');
+                spPasswordFormInner.classList.add('sl-password-form-inner-js');
+                setTimeout(() => {
+                    spPasswordFormInner.classList.remove('sl-password-form-inner-js');
+                }, 301);
             };
 
             // RESETTING THE INPUT
             enterPasswordInput.value = '';
         });
     };
-    // UNLOCK THE LETTER
+    // UNLOCK THE LETTER FORM ITSELF
     spPasswordFormInner.addEventListener('click', e => {
         e.stopImmediatePropagation();
     });
