@@ -12,3 +12,5 @@ function gettingDataFromLocalStorage() {
         displayLetterTitle.textContent = letterTitleData;
     };
 };
+
+gettingDataFromLocalStorage();
