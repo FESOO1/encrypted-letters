@@ -59,3 +59,41 @@
     line-height: 30px;
     font-weight: 300;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+    .display-letter-title,
+    .display-letter-paragraph,
+    .go-back-button {
+        width: 800px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .display-letter-title,
+    .display-letter-paragraph,
+    .go-back-button {
+        width: 600px;
+    }
+}
+
+@media (max-width: 800px) {
+    .display-letter-title,
+    .display-letter-paragraph,
+    .go-back-button {
+        width: 100%;
+    }
+    .display-letter-title {
+        font-size: 2rem;
+    }
+    .display-letter {
+        padding-inline: 50px;
+    }
+}
+
+@media (max-width: 500px) {
+    .display-letter {
+        padding-inline: 20px;
+    }
+}
