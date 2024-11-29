@@ -19,9 +19,10 @@ const enterPasswordButton = document.getElementById('enterPasswordButton');
 const secretLettersThemselves = document.querySelector('.secret-letters-themselves');
 const secretLetterTitleData = [];
 const secretLetterItselfData = [];
-let secretLetterPasswordData = '';
+let secretLetterPasswordData;
 let secretLetterPasswordItself;
 let secretLetterPasswordItselfLength = 0;
+let isSecure = false;
 
 // HANDLING THE FORM
 
@@ -61,8 +62,14 @@ function createSecretLetter(e) {
     // SAVING THE INPUTS IN ARRAYS
     secretLetterTitleData.push(titleLetterInput.value);
     secretLetterItselfData.push(letterInput.value);
+
+    // PASSWORD
     secretLetterPasswordData = letterPasswordInput.value;
-    console.log(secretLetterItselfData);
+    if (letterInput.value.length > 0) {
+        isSecure = true;
+        passwordLabel.classList.add('sl-form-itself-letter-password-input-inactive');
+        localStorage.setItem('isPasswordSecure', isSecure);
+    };
 
     // RESETTING EVERYTHING
     titleLetterInput.value = '';
@@ -71,9 +78,6 @@ function createSecretLetter(e) {
     slForm.classList.remove('sl-form-js');
     addLetterButton.classList.remove('add-letter-button-js');
     isFormOpen = false;
-    if (secretLetterPasswordData.length > 0) {
-        passwordLabel.classList.add('sl-form-itself-letter-password-input-inactive');
-    };
 };
 
 // DISPLAYING THE FORM
@@ -91,9 +95,6 @@ function addLetterFormDisplay() {
         titleLetterInput.value = '';
         letterInput.value = '';
         letterPasswordInput.value = '';
-        if (secretLetterPasswordData.length > 0) {
-            passwordLabel.classList.add('sl-form-itself-letter-password-input-inactive');
-        };
 
         isFormOpen = false;
     };
@@ -103,3 +104,18 @@ function addLetterFormDisplay() {
 
 addLetterButton.addEventListener('click', addLetterFormDisplay);
 letterSaveButton.addEventListener('click', createSecretLetter);
+
+
+// LOCAL STORAGE
+
+// PASSWORD
+
+function passwordCheck() {
+    const passwordCheckLocalStorage = localStorage.getItem('isPasswordSecure');
+
+    if (passwordCheckLocalStorage === 'true') {
+        passwordLabel.classList.add('sl-form-itself-letter-password-input-inactive');
+    };
+};
+
+passwordCheck();
