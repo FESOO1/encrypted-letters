@@ -6,6 +6,7 @@ let isFormOpen = false;
 const titleLetterInput = document.getElementById('titleLetterInput');
 const letterInput = document.getElementById('letterInput');
 const letterPasswordInput = document.getElementById('letterPasswordInput');
+const passwordLabel = document.getElementById('passwordLabel');
 const letterSaveButton = document.getElementById('letterSaveButton');
 
 // PASSWORD FORM VARIABLES
@@ -18,7 +19,7 @@ const enterPasswordButton = document.getElementById('enterPasswordButton');
 const secretLettersThemselves = document.querySelector('.secret-letters-themselves');
 const secretLetterTitleData = [];
 const secretLetterItselfData = [];
-const secretLetterPasswordData = [];
+let secretLetterPasswordData = '';
 let secretLetterPasswordItself;
 let secretLetterPasswordItselfLength = 0;
 
@@ -60,7 +61,8 @@ function createSecretLetter(e) {
     // SAVING THE INPUTS IN ARRAYS
     secretLetterTitleData.push(titleLetterInput.value);
     secretLetterItselfData.push(letterInput.value);
-    secretLetterPasswordData.push(letterPasswordInput.value);
+    secretLetterPasswordData = letterPasswordInput.value;
+    console.log(secretLetterItselfData);
 
     // RESETTING EVERYTHING
     titleLetterInput.value = '';
@@ -69,7 +71,9 @@ function createSecretLetter(e) {
     slForm.classList.remove('sl-form-js');
     addLetterButton.classList.remove('add-letter-button-js');
     isFormOpen = false;
-
+    if (secretLetterPasswordData.length > 0) {
+        passwordLabel.classList.add('sl-form-itself-letter-password-input-inactive');
+    };
 };
 
 // DISPLAYING THE FORM
@@ -87,6 +91,9 @@ function addLetterFormDisplay() {
         titleLetterInput.value = '';
         letterInput.value = '';
         letterPasswordInput.value = '';
+        if (secretLetterPasswordData.length > 0) {
+            passwordLabel.classList.add('sl-form-itself-letter-password-input-inactive');
+        };
 
         isFormOpen = false;
     };

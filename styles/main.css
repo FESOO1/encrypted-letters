@@ -135,6 +135,10 @@
     border: 1px solid rgba(255,255,255,0.04);
 }
 
+.sl-form-itself-letter-password-input-inactive {
+    display: none;
+}
+
 .sl-form-itself-letter-save-button {
     width: 100%;
     height: 45px;
