@@ -57,9 +57,9 @@
     column-gap: 10px;
 }
 
-/* SECRET LETTER ITSELF BUTTON */
+/* SECRET LETTER ITSELF DELETE */
 
-.secret-letter-itself-button {
+.secret-letter-itself-button-delete {
     border-radius: 0.2rem;
     border: 0;
     padding-block: 5px;
@@ -72,36 +72,51 @@
     transition: background-color 200ms;
 }
 
-.secret-letter-itself-button-svg {
+.secret-letter-itself-button-delete-svg {
     color: white;
     width: 20px;
 }
 
-.secret-letter-itself-button-svg-second {
-    width: 20px;
-    color: white;
-    display: none;
-}
-
-.secret-letter-itself-button:hover {
+.secret-letter-itself-button-delete:hover {
     background-color: rgb(50,50,51);
 }
 
-.secret-letter-itself-button:disabled {
+.secret-letter-itself-button-delete:disabled {
     background-color: rgb(25,25,26);
     border: 1px solid rgba(255,255,255,0.03);
     cursor: not-allowed;
 }
 
-.secret-letter-itself-button:disabled .secret-letter-itself-button-svg {
+.secret-letter-itself-button-delete:disabled .secret-letter-itself-button-delete-svg {
     color: gray;
 }
 
-.secret-letter-itself-lock-unlock-button-js > .secret-letter-itself-button-svg {
+/* SECRET LETTER ITSELF BUTTON LOCK */
+
+.secret-letter-itself-button-lock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secret-letter-itself-button-lock-svg {
+    width: 20px;
+    color: white;
+}
+
+.secret-letter-itself-button-lock-svg-second {
+    width: 20px;
+    color: white;
     display: none;
 }
 
-.secret-letter-itself-lock-unlock-button-js > .secret-letter-itself-button-svg-second {
+/* JS */
+
+.secret-letter-itself-lock-unlock-button-js > .secret-letter-itself-button-lock-svg {
+    display: none;
+}
+
+.secret-letter-itself-lock-unlock-button-js > .secret-letter-itself-button-lock-svg-second {
     display: unset;
 }
 
