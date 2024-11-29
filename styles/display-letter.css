@@ -4,9 +4,41 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-block: 80px;
+    padding-block: 50px 80px;
     row-gap: 30px;
     font-family: var(--f-poppins);
+}
+
+/* GO BACK BUTTON */
+
+.go-back-button {
+    width: 900px;
+}
+
+.go-back-button-itself {
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-family: var(--f-poppins);
+    background-color: rgb(20,20,21);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+    border-radius: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.go-back-button-itself-svg {
+    --size: 20px;
+    color: white;
+    width: var(--size);
+    height: var(--size);
+}
+
+.go-back-button-itself:hover {
+    background-color: rgb(30,30,31);
 }
 
 /* DISPLAY LETTER TITLE */
