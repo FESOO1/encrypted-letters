@@ -3,6 +3,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    padding-bottom: 70px;
 }
 
 /* ADD A LETTER BUTTON */
@@ -151,4 +152,15 @@
 
 .sl-form-itself-letter-save-button:hover {
     background-color: rgb(33,33,34);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 700px) {
+    .sl-form-itself {
+        width: 100%;
+    }
+    .sl-form {
+        padding-inline: 20px;
+    }
 }

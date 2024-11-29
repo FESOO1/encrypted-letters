@@ -104,3 +104,23 @@
 .secret-letter-itself-lock-unlock-button-js > .secret-letter-itself-button-svg-second {
     display: unset;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1250px) {
+    .secret-letters-themselves {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .secret-letters-themselves {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .secret-letters-themselves {
+        grid-template-columns: 1fr;
+    }
+}
