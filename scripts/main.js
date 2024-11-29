@@ -20,7 +20,7 @@ const secretLetterTitleData = [];
 const secretLetterItselfData = [];
 const secretLetterPasswordData = [];
 let secretLetterPasswordItself;
-let secretLetterPasswordItselfLength;
+let secretLetterPasswordItselfLength = 0;
 
 // HANDLING THE FORM
 
@@ -76,6 +76,7 @@ function createSecretLetter(e) {
 
     for (let i = 0; i < unlockTheLetterButton.length; i++) {
         let isUnlocked = false;
+        let currentSecretLetterItself = secretLetterItself;
         // HOVER OVER THE SECRET LETTER ITSELF
         unlockTheLetterButton[i].addEventListener('mouseleave', () => {
             if (isUnlocked === true) {
@@ -98,8 +99,6 @@ function createSecretLetter(e) {
                 unlockTheLetterButton[i].classList.remove('secret-letter-itself-lock-unlock-button-js');
             };
 
-            console.log(unlockTheLetterButton[i]);
-
             // UPDATING
             secretLetterPasswordItself = secretLetterPasswordData[i];
             secretLetterPasswordItselfLength = secretLetterPasswordData.indexOf(secretLetterItselfData[i]);
@@ -119,7 +118,6 @@ function createSecretLetter(e) {
 
                 // GIVING ACCESS TO LETTER
                 secretLetterItself.href = '../pages/display-letter.html';
-                console.log(secretLetterItself);
             } else {
                 spPasswordFormInner.classList.add('sl-password-form-inner-js');
                 setTimeout(() => {
