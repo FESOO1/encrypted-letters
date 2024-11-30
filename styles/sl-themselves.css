@@ -20,7 +20,6 @@
     border: 1px solid rgba(255,255,255,0.02);
     border-radius: 0.4rem;
     padding: 10px;
-    cursor: pointer;
     transition: background-color 300ms, border 300ms;
 }
 

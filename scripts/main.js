@@ -21,6 +21,9 @@ const secretLetterTitleData = [];
 const secretLetterItselfData = [];
 let savedPassword;
 let isSecure = false;
+
+// UNLOCK THE LETTERS BUTTON
+const unlockTheLettersButton = document.getElementById('unlockTheLettersButton');
 let isUnlocked = false;
 
 // HANDLING THE FORM
@@ -79,6 +82,23 @@ function createSecretLetter(e) {
     addLetterButton.classList.remove('add-letter-button-js');
     isFormOpen = false;
 };
+
+// UNLOCK AND LOCK THE LETTERS
+
+unlockTheLettersButton.addEventListener('click', () => {
+    spPasswordForm.classList.add('sl-password-form-active');
+});
+
+
+// UNLOCK THE LETTERS PASSWORD FORM
+
+spPasswordForm.addEventListener('click', () => {
+    spPasswordForm.classList.remove('sl-password-form-active');
+});
+
+spPasswordFormInner.addEventListener('click', e => {
+    e.stopImmediatePropagation();
+});
 
 // DISPLAYING THE FORM
 
