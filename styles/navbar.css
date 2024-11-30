@@ -42,10 +42,19 @@ nav {
 .sl-lock-the-letters-button-svg-second {
     display: none;
     color: white;
+    width: 20px;
 }
 
 .sl-lock-the-letters-button:hover {
     background-color: rgb(41, 41, 42);
+}
+
+.sl-lock-the-letters-button-unlocked > .sl-lock-the-letters-button-svg {
+    display: none;
+}
+
+.sl-lock-the-letters-button-unlocked > .sl-lock-the-letters-button-svg-second {
+    display: unset;
 }
 
 /* ADD A LETTER BUTTON */

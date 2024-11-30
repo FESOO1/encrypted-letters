@@ -83,12 +83,38 @@ function createSecretLetter(e) {
     isFormOpen = false;
 };
 
+// ENTER PASSWORD
+
+enterPasswordButton.addEventListener('click', e => {
+    e.preventDefault();
+
+    const savedPasswordLocalStorage = localStorage.getItem('savedPassword');
+
+    if (enterPasswordInput.value === savedPasswordLocalStorage) {
+        spPasswordForm.classList.remove('sl-password-form-active');
+        unlockTheLettersButton.classList.add('sl-lock-the-letters-button-unlocked');
+        isUnlocked = true;
+    } else {
+        spPasswordFormInner.classList.add('sl-password-form-inner-js');
+        setTimeout(() => {
+            spPasswordFormInner.classList.remove('sl-password-form-inner-js');
+        }, 301);
+    };
+
+    // RESETTING
+    enterPasswordInput.value = '';
+});
+
 // UNLOCK AND LOCK THE LETTERS
 
 unlockTheLettersButton.addEventListener('click', () => {
-    spPasswordForm.classList.add('sl-password-form-active');
+    if (isUnlocked === true) {
+        isUnlocked = false;
+        unlockTheLettersButton.classList.remove('sl-lock-the-letters-button-unlocked');
+    } else {
+        spPasswordForm.classList.add('sl-password-form-active');
+    };
 });
-
 
 // UNLOCK THE LETTERS PASSWORD FORM
 
