@@ -236,13 +236,13 @@ function secretLetterItselfLocalStorage() {
 
 
             // SECRET LETTER ITSELF EVENT LISTENER
-            const secretLetterItself = document.querySelectorAll('.secret-letter-itself');
+            /* const secretLetterItself = document.querySelectorAll('.secret-letter-itself');
             for (let i = 0; i < secretLetterItself.length; i++) {
                 secretLetterItself[i].addEventListener('click', () => {
                     localStorage.setItem('secretLetterItself', secretLetterItselfData[i]);
                     localStorage.setItem('secretLetterTitle', secretLetterTitleData[i]);
                 });
-            };
+            }; */
         };
     };
 };
