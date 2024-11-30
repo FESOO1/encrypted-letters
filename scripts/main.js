@@ -94,6 +94,11 @@ enterPasswordButton.addEventListener('click', e => {
         spPasswordForm.classList.remove('sl-password-form-active');
         unlockTheLettersButton.classList.add('sl-lock-the-letters-button-unlocked');
         isUnlocked = true;
+
+        for (const secretLetters of secretLettersThemselves.children) {
+            secretLetters.classList.add('secret-letter-itself-unlocked');
+            secretLetters.href = '../pages/display-letter.html';
+        };
     } else {
         spPasswordFormInner.classList.add('sl-password-form-inner-js');
         setTimeout(() => {
@@ -111,6 +116,10 @@ unlockTheLettersButton.addEventListener('click', () => {
     if (isUnlocked === true) {
         isUnlocked = false;
         unlockTheLettersButton.classList.remove('sl-lock-the-letters-button-unlocked');
+        for (const secretLetters of secretLettersThemselves.children) {
+            secretLetters.classList.remove('secret-letter-itself-unlocked');
+            secretLetters.removeAttribute('href');
+        };
     } else {
         spPasswordForm.classList.add('sl-password-form-active');
     };

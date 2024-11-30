@@ -112,11 +112,11 @@
 
 /* JS */
 
-.secret-letter-itself-button-lock-js > .secret-letter-itself-button-lock-svg {
+.secret-letter-itself-unlocked .secret-letter-itself-button-lock-svg {
     display: none;
 }
 
-.secret-letter-itself-button-lock-js > .secret-letter-itself-button-lock-svg-second {
+.secret-letter-itself-unlocked .secret-letter-itself-button-lock-svg-second {
     display: unset;
 }
 
