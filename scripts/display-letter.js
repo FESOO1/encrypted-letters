@@ -4,11 +4,11 @@ const displayLetterItself = document.querySelector('.display-letter-paragraph');
 // GETTING DATA FROM LOCAL STORAGE
 
 function gettingDataFromLocalStorage() {
-    const secretLetterName = localStorage.getItem('secretLetterName');
+    const secretLetterItself = localStorage.getItem('secretLetterItself');
     const secretLetterTitle = localStorage.getItem('secretLetterTitle');
     
-    if (secretLetterName) {
-        displayLetterItself.innerHTML = secretLetterName;
+    if (secretLetterItself) {
+        displayLetterItself.innerHTML = secretLetterItself;
         displayLetterTitle.textContent = secretLetterTitle;
     };
 };
