@@ -57,6 +57,15 @@ nav {
     display: unset;
 }
 
+.sl-lock-the-letters-button:disabled {
+    background-color: rgb(24,24,25);
+    cursor: not-allowed;
+}
+
+.sl-lock-the-letters-button:disabled svg {
+    color: gray;
+}
+
 /* ADD A LETTER BUTTON */
 
 .sl-add-letter-button {

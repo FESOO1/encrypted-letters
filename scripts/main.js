@@ -65,8 +65,8 @@ function createSecretLetter(e) {
     secretLetterItselfData.push(letterInput.value);
     secretLetterTitleData.push(titleLetterInput.value);
 
-    localStorage.setItem('secretLetterItselfData', JSON.stringify(secretLetterItselfData));
-    localStorage.setItem('secretLetterTitleData', JSON.stringify(secretLetterTitleData));
+    localStorage.setItem('secretLetterItselfDataLC', JSON.stringify(secretLetterItselfData));
+    localStorage.setItem('secretLetterTitleDataLC', JSON.stringify(secretLetterTitleData));
 
     // PASSWORD
     savedPassword = letterPasswordInput.value;
@@ -85,12 +85,40 @@ function createSecretLetter(e) {
     addLetterButton.classList.remove('add-letter-button-js');
     isFormOpen = false;
 
+    // CHECK IF THERE IS AT LEAST A LETTER IN THE PAGE
+    if (secretLetterTitleData.length > 0) {
+        unlockTheLettersButton.disabled = false;
+    };
+
     // SECRET LETTER ITSELF EVENT LISTENER
     const secretLetterItself = document.querySelectorAll('.secret-letter-itself');
     for (let i = 0; i < secretLetterItself.length; i++) {
         secretLetterItself[i].addEventListener('click', () => {
             localStorage.setItem('secretLetterItself', secretLetterItselfData[i]);
             localStorage.setItem('secretLetterTitle', secretLetterTitleData[i]);
+        });
+    };
+
+    // DELETE A LETTER BUTTON
+    const deleteSecretLetter = document.querySelectorAll('.secret-letter-itself-button-delete');
+    for (let i = 0; i < deleteSecretLetter.length; i++) {
+        // MOUSELEAVE
+        deleteSecretLetter[i].addEventListener('mouseleave', () => {
+            secretLetterItself[i].href = '../pages/display-letter.html';
+        });
+        // MOUSEENTER
+        deleteSecretLetter[i].addEventListener('mouseenter', () => {
+            secretLetterItself[i].removeAttribute('href');
+        });
+        
+        // DELETING A LETTER
+        deleteSecretLetter[i].addEventListener('click', () => {
+            secretLettersThemselves.removeChild(secretLetterItself[i]);
+            secretLetterItselfData.splice(i, 1);
+            secretLetterTitleData.splice(i, 1);
+
+            localStorage.setItem('secretLetterItselfDataLC', JSON.stringify(secretLetterItselfData));
+            localStorage.setItem('secretLetterTitleDataLC', JSON.stringify(secretLetterTitleData));
         });
     };
 };
@@ -106,10 +134,15 @@ enterPasswordButton.addEventListener('click', e => {
         spPasswordForm.classList.remove('sl-password-form-active');
         unlockTheLettersButton.classList.add('sl-lock-the-letters-button-unlocked');
         isUnlocked = true;
-
         for (const secretLetters of secretLettersThemselves.children) {
             secretLetters.classList.add('secret-letter-itself-unlocked');
             secretLetters.href = '../pages/display-letter.html';
+
+            // ENABLING THE DELETE BUTTON SO THAT A USER CAN DELETE A LETTER
+            const deleteButton = secretLetters.querySelectorAll('.secret-letter-itself-button-delete');
+            for (const deleteButtons of deleteButton) {
+                deleteButtons.disabled = false;
+            };
         };
     } else {
         spPasswordFormInner.classList.add('sl-password-form-inner-js');
@@ -131,6 +164,12 @@ unlockTheLettersButton.addEventListener('click', () => {
         for (const secretLetters of secretLettersThemselves.children) {
             secretLetters.classList.remove('secret-letter-itself-unlocked');
             secretLetters.removeAttribute('href');
+
+            // DISABLING THE DELETE BUTTON SO THAT A USER CANNOT DELETE A LETTER
+            const deleteButton = secretLetters.querySelectorAll('.secret-letter-itself-button-delete');
+            for (const deleteButtons of deleteButton) {
+                deleteButtons.disabled = true;
+            };
         };
     } else {
         spPasswordForm.classList.add('sl-password-form-active');
@@ -191,16 +230,16 @@ passwordCheck();
 // SECRET LETTER ITSELF
 
 function secretLetterItselfLocalStorage() {
-    const secretLetterTitleData = JSON.parse(localStorage.getItem('secretLetterTitleData'));
-    const secretLetterItselfData = JSON.parse(localStorage.getItem('secretLetterItselfData'));
+    const secretLetterTitleDataLC = JSON.parse(localStorage.getItem('secretLetterTitleDataLC'));
+    const secretLetterItselfDataLC = JSON.parse(localStorage.getItem('secretLetterItselfDataLC'));
 
-    if (secretLetterTitleData) {
+    if (secretLetterTitleDataLC) {
         // LOOP TO CREATE AS MANY ELEMENTS AS WE NEED
-        for (let i = 0; i < secretLetterTitleData.length; i++) {
+        for (let i = 0; i < secretLetterTitleDataLC.length; i++) {
             secretLettersThemselves.innerHTML += `
                 <a class="secret-letter-itself">
                     <div class="secret-letter-itself-inner">
-                        <h3 class="secret-letter-itself-inner-title">${secretLetterTitleData[i]}</h3>
+                        <h3 class="secret-letter-itself-inner-title">${secretLetterTitleDataLC[i]}</h3>
                     </div>
                     <div class="secret-letter-itself-buttons">
                         <button disabled class="secret-letter-itself-button-delete">
@@ -227,12 +266,50 @@ function secretLetterItselfLocalStorage() {
                 </a>
             `;
 
-            /* // PUSHING THE DATA
-            secretLetterItselfData.push(secretLetterItselfData[i]);
-            secretLetterTitleData.push(secretLetterTitleData[i]);
+            letterSaveButton.addEventListener('click', () => {
+                // PUSHING THE DATA
+                secretLetterItselfData.push(secretLetterItselfDataLC[i]);
+                secretLetterTitleData.push(secretLetterTitleDataLC[i]);
 
-            localStorage.setItem('secretLetterItselfData', JSON.stringify(secretLetterItselfData));
-            localStorage.setItem('secretLetterTitleData', JSON.stringify(secretLetterTitleData)); */
+                localStorage.setItem('secretLetterItselfDataLC', JSON.stringify(secretLetterItselfData));
+                localStorage.setItem('secretLetterTitleDataLC', JSON.stringify(secretLetterTitleData));
+            });
+
+            const secretLetterItself = document.querySelectorAll('.secret-letter-itself');
+            for (let i = 0; i < secretLetterItself.length; i++) {
+                secretLetterItself[i].addEventListener('click', () => {
+                    localStorage.setItem('secretLetterItself', secretLetterItselfDataLC[i]);
+                    localStorage.setItem('secretLetterTitle', secretLetterTitleDataLC[i]);
+                });
+            };
+
+            // CHECK IF THERE IS AT LEAST A LETTER IN THE PAGE
+            if (secretLetterTitleDataLC.length > 0) {
+                unlockTheLettersButton.disabled = false;
+            };
+
+            // DELETE A LETTER BUTTON
+            const deleteSecretLetter = document.querySelectorAll('.secret-letter-itself-button-delete');
+            for (let i = 0; i < deleteSecretLetter.length; i++) {
+                // MOUSELEAVE
+                deleteSecretLetter[i].addEventListener('mouseleave', () => {
+                    secretLetterItself[i].href = '../pages/display-letter.html';
+                });
+                // MOUSEENTER
+                deleteSecretLetter[i].addEventListener('mouseenter', () => {
+                    secretLetterItself[i].removeAttribute('href');
+                });
+                
+                // DELETING A LETTER
+                deleteSecretLetter[i].addEventListener('click', () => {
+                    secretLettersThemselves.removeChild(secretLetterItself[i]);
+                    secretLetterItselfData.splice(i, 1);
+                    secretLetterTitleData.splice(i, 1);
+
+                    localStorage.setItem('secretLetterItselfDataLC', JSON.stringify(secretLetterItselfData));
+                    localStorage.setItem('secretLetterTitleDataLC', JSON.stringify(secretLetterTitleData));
+                });
+            };
         };
     };
 };
