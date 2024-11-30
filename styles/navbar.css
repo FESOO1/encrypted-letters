@@ -1,0 +1,84 @@
+/* NAVBAR */
+
+nav {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    padding-inline: 3.8px;
+    border-radius: 0.5rem;
+    height: 48px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(24, 24, 25, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 998;
+}
+
+/* UNLOCK THE SECRET LETTERS */
+
+.sl-lock-the-letters-button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3rem;
+    border: 0;
+    background-color: rgb(30,30,31);
+    cursor: pointer;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.sl-lock-the-letters-button-svg {
+    color: white;
+    width: 20px;
+}
+
+.sl-lock-the-letters-button-svg-second {
+    display: none;
+    color: white;
+}
+
+.sl-lock-the-letters-button:hover {
+    background-color: rgb(41, 41, 42);
+}
+
+/* ADD A LETTER BUTTON */
+
+.sl-add-letter-button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3rem;
+    border: 0;
+    background-color: rgb(30,30,31);
+    cursor: pointer;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.add-letter-button-js > .sl-add-letter-button-svg {
+    transform: rotateZ(45deg);
+    color: red;
+}
+
+.sl-add-letter-button-svg {
+    color: white;
+    transition: transform 300ms, color 300ms;
+}
+
+.sl-add-letter-button:hover {
+    background-color: rgb(41, 41, 42);
+}
+
+.sl-add-letter-button:active {
+    background-color: rgb(28,28,29);
+}

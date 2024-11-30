@@ -6,46 +6,6 @@
     padding-bottom: 70px;
 }
 
-/* ADD A LETTER BUTTON */
-
-.sl-add-letter-button {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.3rem;
-    border: 0;
-    background-color: rgb(25,25,26);
-    cursor: pointer;
-    border-top: 1px solid rgba(255,255,255,0.03);
-    border-bottom: 1px solid rgba(255,255,255,0.03);
-    z-index: 998;
-}
-
-.add-letter-button-js > .sl-add-letter-button-svg {
-    transform: rotateZ(45deg);
-    color: red;
-}
-
-.sl-add-letter-button-svg {
-    color: white;
-    transition: transform 300ms, color 300ms;
-}
-
-.sl-add-letter-button:hover {
-    background-color: rgb(28,28,29);
-}
-
-.sl-add-letter-button:active {
-    background-color: rgb(21,21,22);
-}
-
 /* LETTER FORM */
 
 .sl-form {
