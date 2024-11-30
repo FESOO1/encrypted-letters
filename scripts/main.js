@@ -233,16 +233,6 @@ function secretLetterItselfLocalStorage() {
 
             localStorage.setItem('secretLetterItselfData', JSON.stringify(secretLetterItselfData));
             localStorage.setItem('secretLetterTitleData', JSON.stringify(secretLetterTitleData));
-
-
-            // SECRET LETTER ITSELF EVENT LISTENER
-            /* const secretLetterItself = document.querySelectorAll('.secret-letter-itself');
-            for (let i = 0; i < secretLetterItself.length; i++) {
-                secretLetterItself[i].addEventListener('click', () => {
-                    localStorage.setItem('secretLetterItself', secretLetterItselfData[i]);
-                    localStorage.setItem('secretLetterTitle', secretLetterTitleData[i]);
-                });
-            }; */
         };
     };
 };
