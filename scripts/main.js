@@ -81,6 +81,15 @@ function createSecretLetter(e) {
     slForm.classList.remove('sl-form-js');
     addLetterButton.classList.remove('add-letter-button-js');
     isFormOpen = false;
+
+    // SECRET LETTER ITSELF EVENT LISTENER
+    const secretLetterItself = document.querySelectorAll('.secret-letter-itself');
+    for (let i = 0; i < secretLetterItself.length; i++) {
+        secretLetterItself[i].addEventListener('click', () => {
+            localStorage.setItem('secretLetterName', secretLetterItselfData[i]);
+            localStorage.setItem('secretLetterTitle', secretLetterTitleData[i]);
+        });
+    };
 };
 
 // ENTER PASSWORD
