@@ -194,7 +194,7 @@ function secretLetterItselfLocalStorage() {
     const secretLetterTitleData = JSON.parse(localStorage.getItem('secretLetterTitleData'));
     const secretLetterItselfData = JSON.parse(localStorage.getItem('secretLetterItselfData'));
 
-    if (secretLetterTitleData.length > 0) {
+    if (secretLetterTitleData) {
         // LOOP TO CREATE AS MANY ELEMENTS AS WE NEED
         for (let i = 0; i < secretLetterTitleData.length; i++) {
             secretLettersThemselves.innerHTML += `
@@ -227,12 +227,12 @@ function secretLetterItselfLocalStorage() {
                 </a>
             `;
 
-            // PUSHING THE DATA
+            /* // PUSHING THE DATA
             secretLetterItselfData.push(secretLetterItselfData[i]);
             secretLetterTitleData.push(secretLetterTitleData[i]);
 
             localStorage.setItem('secretLetterItselfData', JSON.stringify(secretLetterItselfData));
-            localStorage.setItem('secretLetterTitleData', JSON.stringify(secretLetterTitleData));
+            localStorage.setItem('secretLetterTitleData', JSON.stringify(secretLetterTitleData)); */
         };
     };
 };
