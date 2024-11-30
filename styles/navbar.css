@@ -58,7 +58,7 @@ nav {
 }
 
 .sl-lock-the-letters-button:disabled {
-    background-color: rgb(24,24,25);
+    background-color: rgb(26,26,27);
     cursor: not-allowed;
 }
 

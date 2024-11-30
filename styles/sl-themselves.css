@@ -85,6 +85,7 @@
     background-color: rgb(25,25,26);
     border: 1px solid rgba(255,255,255,0.03);
     cursor: not-allowed;
+    pointer-events: none;
 }
 
 .secret-letter-itself-button-delete:disabled .secret-letter-itself-button-delete-svg {
@@ -121,6 +122,7 @@
 }
 
 /* MEDIA QUERIES */
+
 
 @media (max-width: 1250px) {
     .secret-letters-themselves {
